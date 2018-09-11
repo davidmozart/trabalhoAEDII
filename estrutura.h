@@ -17,7 +17,7 @@ typedef struct Endereco{
 
 endereco *raEnd = NULL;
 
-struct Vendedor {
+typedef struct Vendedor {
 	int numMatricula;
 	string nome;
 	int cpf;
@@ -28,10 +28,11 @@ struct Vendedor {
 	int alt;
 	struct Vendedor *dir;
 	struct vendedor *esq;
-};
+}vendedor ;
+
 vendedor *raVend = NULL;
 
-struct Cliente {
+typedef struct Cliente {
 	string nome;
 	int cpf;
 	endereco endCliente;
@@ -41,39 +42,45 @@ struct Cliente {
 	int alt;
 	struct Cliente *dir;
 	struct Cliente *esq;
-};
+}cliente;
+
 cliente *raCli = NULL;
-struct fornecedor {
+typedef struct Fornecedor {
 	string cnpj;
 	string nomeFan;
 	string end;
 	int telefone;
 	string email;
 	int alt;
-	fornecedor *dir;
-	fornecedor *esq;
-};
+	struct Fornecedor *dir;
+	struct Fornecedor *esq;
+} fornecedor;
+
 fornecedor *raFor = NULL;
-struct produto {
+
+typedef struct Produto {
 	int codProduto;
 	string nome;
 	int quant;
 	fornecedor prod;
 	int alt;
-	produto *dir;
-	produto *esq;
-};
+	struct Produto *dir;
+	struct Produto *esq;
+}produto;
+
 produto *raPro = NULL;
-struct venda {
+
+typedef struct Venda {
 	int codVenda;
 	vendedor ven;
 	cliente ven;
 	produto ven;
 	string data;
 	int alt;
-	venda *dir;
-	venda *esq;
-};
+	struct Venda *dir;
+	struct Venda *esq;
+}venda;
+
 venda *raVen = NULL;
 //int altura(arv *r);
 
